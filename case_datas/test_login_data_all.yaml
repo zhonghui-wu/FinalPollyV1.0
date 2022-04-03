@@ -1,0 +1,5 @@
+- ['松勤老师','123456',['xpath','//*[text()="首页"]'],'首页']
+- ['PW179038','123456',['xpath','//*[text()="首页"]'],'首页']
+- ['松勤老师','12',['css selector','.el-form-item__error'],'密码不能小于3位' ]
+- ['松勤老师','12345',['css selector','.el-message__content'],'密码不正确！' ]
+- ['松勤老师0','12345',['css selector','.el-message__content'],'用户名或密码错误' ]

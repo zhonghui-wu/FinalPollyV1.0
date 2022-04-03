@@ -1,0 +1,124 @@
+LoginPage: #登录页面
+  username_input: ['id','username'] #用户名输入框
+  password_input: ['id','password'] #密码输入框
+  login_button: ['id','btnLogin']  #登录按钮
+  message_text: ['css selector','.el-message--error'] #登录错误消息文本
+  message_text_less: ['css selector','.el-form-item__error'] #密码不能小于3位
+
+MainPage: #首页
+  home_button: ['xpath','//*[text()="首页"]'] #首页按钮
+  logout_button: ['xpath',"//span[text()='退出']"] #退出按钮
+  personal_button: ['xpath','//img']  #个人中心按钮
+  menu_productmanage: [ 'xpath',"//span[text()='商品管理']" ]
+  submenu_pm_productlist: [ 'xpath',"//span[text()='商品列表']" ]
+  submenu_pm_addproduct: [ 'xpath',"//span[text()='添加商品']" ]
+  submenu_pm_productkind: [ 'xpath',"//span[text()='商品分类']" ]
+  submenu_pm_producttype: [ 'xpath',"//span[text()='商品类型']" ]
+  submenu_pm_brandmanage: [ 'xpath',"//span[text()='品牌管理']" ]
+  submenu_pm_productattr: [ 'xpath',"//span[text()='商品规格']" ]
+  submenu_pm_productgift: [ 'xpath',"//span[text()='赠礼列表']" ]
+  submenu_pm_productconsult: [ 'xpath',"//span[text()='商品评论']" ]
+  menu_ordermanage: [ 'xpath',"//span[text()='订单管理']" ]
+  menu_membermanage: [ 'xpath',"//span[text()='会员管理']" ]
+  today_orders: [ 'css selector','.el-row > div:nth-child(1) .total-value' ] #今日下单数
+  today_sales: [ 'css selector','.el-row > div:nth-child(2) .total-value' ] #今日销售总额
+  today_product: [ 'css selector','.el-row > div:nth-child(3) .total-value' ] #今日商品数
+  today_members: [ 'css selector','.el-row > div:nth-child(4) .total-value' ] #今日会员
+
+ProductListPage: #商品列表
+  home_button: [ 'xpath','//*[text()="首页"]' ] #首页按钮
+  first_product: ['css selector','tbody > tr:nth-child(1) > td:nth-child(4) p:nth-child(1)'] #商品列表界面的第一个商品名称
+  all_products: ['css selector','tbody  td:nth-child(4) p:nth-child(1)'] #当前页所有商品的名字
+  all_product_brands: ['css selector','tbody  td:nth-child(4) p:nth-child(2)'] #当前页所有品牌的名字
+  product_name_search_input: ['css selector',"form > div:nth-child(1) .el-input__inner"] #输入搜索-商品名称
+  product_brand_search_select: ['css selector','form >div:nth-child(3) .el-input__inner'] #搜索-商品品牌
+  product_brand_search_select_idx1: ['css selector','body > .el-select-dropdown ul > li:nth-child(1)'] #搜索-商品品牌-第一个品牌
+  shelves_status_select: ['css selector','form >div:nth-child(5) .el-input__inner'] #上架状态
+  shelves_status_select_idx: ['css selector','body > .el-select-dropdown ul > :nth-child(%s)'] #上架状态中的第几个，注意跟前面的第几个品牌冲突的
+  search_button: ['css selector','.el-button.el-button--primary.el-button--small'] #查询结果或底部的确定，第一个是查询结果
+  search_reset: ['css selector',' button.el-button.el-button--default.el-button--small'] #重置按钮
+  checkbox_product: ['css selector','.el-table__header-wrapper+div .el-checkbox__inner'] #商品的勾选框
+  delete_button: ['xpath',"//span[contains(text(),'删除')]"] #商品的删除按钮
+  confirm_button: ['xpath',"//div[@class='el-message-box__btns']/button[2]"] #删除后的确认
+AddProductPage: #添加商品
+  home_button: [ 'xpath','//*[text()="首页"]' ] #首页按钮
+  product_kind_select: ['css selector','form > div:nth-child(1) .el-cascader__label'] #商品分类
+  product_kind_select_index1: ['css selector','ul.el-cascader-menu > li:nth-child({})'] #商品分类一级菜单
+  product_kind_select_index2: ['css selector','ul + ul.el-cascader-menu > li:nth-child({})'] #商品分类二级菜单
+  product_name: ['css selector','label[for="name"] + div input'] #商品名称
+  product_subtitle: ['css selector','label[for="subTitle"] + div input']  #副标题
+  product_brand_select: ['css selector','label[for="brandId"] + div input'] #商品品牌
+  product_brand_select_idx: ['css selector','body > div:nth-child(8) ul > li:nth-child({})'] #商品品牌一级菜单
+  next_commodity_promotion_btn: ['xpath','//*[text()="下一步，填写商品促销"]']
+  is_herald: ['xpath','//*[text()="预告商品："]/..//span']
+  next_product_attribute_btn: ['xpath','//*[text()="下一步，填写商品属性"]']
+  netxt_product_related_btn: ['xpath','//*[text()="下一步，选择商品关联"]']
+  complete_btn: ['xpath','//*[text()="完成，提交商品"]']
+  submit_btn: ['css selector','div.el-message-box__btns > button.el-button--primary'] #提交按钮，确定
+  submenu_pm_productlist: [ 'xpath',"//span[text()='商品列表']" ]
+
+ProductKindPage: #商品分类
+  home_button: [ 'xpath','//*[text()="首页"]' ] #首页按钮
+  last_page_btn: ['css selector','.el-pager > :last-child']  #最后一页的按钮
+  last_kind_name: ['css selector','tbody > :last-child > :nth-child(2)']  #最后一个分类的名称
+  add_btn: ['css selector','div.el-card.operate-container.is-never-shadow  button'] #添加按钮
+
+AddProductKindPage: #添加商品分类
+  home_button: ['xpath','//*[text()="首页"]'] #首页按钮
+  cate_name_input: ['css selector','form > :nth-child(1) .el-input__inner'] #分类名称
+  kind_select:  ['css selector','form > :nth-child(2) .el-input__inner'] #上级分类
+  kind_select_idx: ['css selector','.el-scrollbar li:nth-child(%s)']  #上级分类选项-不能是第一个
+  number_input: ['css selector','form > :nth-child(3) .el-input__inner'] #数量单位
+  sorting_input:  ['css selector','form > :nth-child(4) .el-input__inner'] #排序
+  is_show: ['css selector','form > :nth-child(5) > div label:nth-child(%s)'] #是否显示
+  is_show_navigation: ['css selector','form > :nth-child(6) > div label:nth-child(%s)'] #是否显示在导航栏
+  is_show_home_page: ['css selector','form > :nth-child(7) > div label:nth-child(%s)'] #是否显示在主页
+  submit_btn: ['css selector','form > :nth-child(13) .el-button--primary'] #提交按钮
+  primary_submit_btn:  ['css selector','.el-message-box__btns > :nth-child(2)'] #确定按钮
+
+
+ProductTypePage: #商品类型页面
+  home_button: [ 'xpath','//*[text()="首页"]' ] #首页按钮
+  add_product_type_btn: ['css selector','button.btn-add']
+  type_name_input: ['css selector','.el-dialog__body input.el-input__inner']
+  type_ico_upload_btn: ['name','file']
+  list_style_radio_btn: ['css selector','form > :nth-child(3)  .el-radio-group > :nth-child(%s)']
+  is_show_on_home_btn: ['css selector','form > :nth-child(4)  .el-radio-group > :nth-child(%s)']
+  cancel_btn: ['css selector','span > button:nth-child(1)']
+  confirm_btn:  ['css selector','span > button:nth-child(2)']
+  type_number:  ['css selector','tbody > :nth-child(%s) > :nth-child(1) > div']
+  type_name: ['css selector','tbody > :nth-child(%s) > :nth-child(2) > div']
+  total_number: ['css selector','.el-pagination__total']
+  last_page_btn: [ 'css selector','.el-pager>:last-child' ]
+  last_type_name: ['css selector','tbody>:last-child>td:nth-child(2)']
+
+ProductAttributePage: #商品规格
+  home_button: [ 'xpath','//*[text()="首页"]' ] #首页按钮
+  all_attr_name_txt: ['css selector','tbody > tr > :nth-child(3)']
+  add_btn: ['css selector',' div.el-card.operate-container.is-never-shadow button']
+
+AddProductAttributePage: #添加商品规格
+  home_button: [ 'xpath','//*[text()="首页"]' ] #首页按钮
+  attr_name_input: ['css selector',' div.el-form-item.is-required  input']
+  type_select: ['css selector','form > :nth-child(2) input']
+  type_select_idx: ['css selector','div.el-scrollbar__wrap > ul > li:nth-child(%s)']
+  product_type_radio: ['css selector','label:nth-child(%s) > span.el-radio__input']
+  submit_btn: ['css selector','div.el-form-item__content > button:nth-child(1)']
+  sure_btn: ['css selector','button + button.el-button--primary']
+
+BrandManagePage:  #品牌管理
+  home_button: [ 'xpath','//*[text()="首页"]' ] #首页按钮
+  brand_search_input:  ['css selector','div.el-card.filter-container.is-never-shadow  input'] #搜索输入框
+  first_brand_name_txt:  ['css selector','tbody > :nth-child(1) > :nth-child(3)>div'] #第一个品牌名字
+  all_brand_name_txt:  ['css selector','tbody > tr > :nth-child(3)'] #所有的品牌名字
+  add_brand_btn: ['xpath',"//button/span[contains(text(),'添加')]"]  #添加品牌按钮
+  search_btn: ['xpath','//span[contains(text(),"查询结果")]'] #查询结果
+  last_page_btn: ['css selector','.el-pager>:last-child']   #最后一页的按钮
+  last_brand_name: ['css selector','tbody>:last-child>td:nth-child(3)']  #最后一个品牌的名字
+AddBrandPage: #添加品牌
+  brand_name_input: ['css selector','form>div:nth-child(1) input']
+  brand_first_char: ['css selector','form>div:nth-child(2) input']
+  brand_story: ['xpath','//textarea']
+  commit_btn: ['xpath',"//span[contains(text(),'提交')]"]
+  confirm_btn: ['xpath',"//span[contains(text(),'确定')]"]
+  submenu_pm_brandmanage: [ 'xpath',"//span[text()='品牌管理']" ]

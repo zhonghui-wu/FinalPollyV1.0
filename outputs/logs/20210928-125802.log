@@ -1,0 +1,2 @@
+2021-09-28 12:58:02,handle_loguru(line:35),CRITICAL||test critical
+2021-09-28 12:58:03,handle_loguru(line:37),ERROR||test error

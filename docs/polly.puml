@@ -1,0 +1,160 @@
+@startuml
+
+
+package common <<folder>> {
+    package basePage.py <<Frame>> {
+        class BasePage {
+            +__init__()
+            +open_url()
+            +get_element()
+            +get_elements()
+            +click_element()
+            +input_text()
+            +get_element_text()
+            +get_element_texts()
+            +wait_click_element()
+            +wait_get_element_text()
+            +isexist_element()
+        }
+    }
+    package comm_driver.py <<Frame>> {
+        class CommDriver {
+            +get_driver()
+        }
+        class Single {
+
+        }
+    }
+}
+package page_objects <<folder>>
+{
+    package loginPage.py <<Frame>>
+    {
+        class LoginPage
+        note left: 登录页面类
+        class LoginPage
+        {
+        +open_loginpage()
+        +login_system()
+        }
+    }
+    package mainPage.py <<Frame>>
+    {
+        class MainPage
+        note right: 首页类
+        class MainPage
+        {
+        +goto_productlist()
+        +goto_brandmanage()
+        +goto_productkind()
+        +goto_producttype()
+        +goto_addproduct()
+        +goto_productattr()
+        +logout_mainpage()
+        }
+    }
+    package pmpage_objects <<folder>>
+    {
+        package addbrandPage.py <<Frame>>
+        {
+            class AddBrandPage
+            {
+            +addbrand()
+            }
+        }
+         package addproductattrPage.py <<Frame>>
+        {
+            class AddProductAttributePage
+            {
+            +addproductattr()
+            }
+        }
+        package addproductkindPage.py <<Frame>>
+        {
+            class AddProductKindPage
+            {
+            +add_product_kind()
+            }
+        }
+        package addproductPage.py <<Frame>>
+        {
+            class AddProductPage
+            {
+                +goto_productlist()
+                +back_mainpage()
+                +add_product()
+            }
+        }
+        package brandmanagePage.py <<Frame>>
+        {
+            class BrandManagePage
+            {
+                +goto_addbrand()
+                +get_lastbrandname()
+                +search_brand()
+                +get_pagebrandnames()
+            }
+        }
+        package productattPage.py <<Frame>>
+        {
+            class ProductAttributePage
+            {
+            +goto_addproductattr()
+            +get_allattr()
+            }
+        }
+        package productkindPage.py <<Frame>>
+        {
+            class ProductKindPage
+            {
+            +goto_addproductkind()
+            +get_last_productkind()
+            }
+        }
+        package productlistPage.py <<Frame>>
+        {
+            class ProductListPage
+            {
+            +goto_addproductkind()
+            +get_last_productkind()
+            }
+        }
+        package producttypePage.py <<Frame>>
+        {
+            class ProductTypePage
+            {
+            +addproducttype()
+            +get_lasttypename()
+            }
+        }
+    }
+}
+
+package utils <<folder>>
+{
+    package handle_loguru.py <<Frame>>
+    {
+        class MyLog {
+            +info()
+            +warning()
+            +critical()
+            +error()
+            +debug()
+        }
+    }
+}
+CommDriver --> Single :继承
+BasePage ...> CommDriver: 调用
+LoginPage --> BasePage :继承
+MainPage --> BasePage :继承
+AddBrandPage --> BasePage :继承
+AddProductAttributePage --> BasePage :继承
+AddProductKindPage		--> BasePage :继承
+AddProductPage			--> BasePage :继承
+BrandManagePage			--> BasePage :继承
+ProductAttributePage	--> BasePage :继承
+ProductKindPage		    --> BasePage :继承
+ProductListPage		    --> BasePage :继承
+ProductTypePage		    --> BasePage :继承
+
+@enduml
